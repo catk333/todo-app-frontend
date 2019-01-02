@@ -14,8 +14,12 @@ const styles= {
 
         header:{
 
-            color: "blue",
-            textDecoration:"underline"
+    color: "black",
+    fontfamily:"Arial Narrow",
+    fontsize:"60px",
+    fontweight:"bold",
+    textalign:"center",
+    
         }
 
           

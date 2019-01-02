@@ -12,7 +12,7 @@ class TaskTable extends React.Component{
               First task
               </div>
               <div class="col">
-                    <input type="submit" value="Done"/>
+                    <input style={style.done} type="submit" value="Done"/>
             </div>
               <div class="col">
                     <input type="submit" value="Delete"/>
@@ -26,7 +26,7 @@ class TaskTable extends React.Component{
                     Second task
               </div>
               <div class="col">
-                    <input type="submit" value="Done"/>
+                    <input style={style.done} type="submit" value="Done"/>
               </div>
               <div class="col">
                     <input type="submit" value="Delete"/>
@@ -38,16 +38,32 @@ class TaskTable extends React.Component{
                     Third task
               </div>
               <div class="col">
-                    <input type="submit" value="Done"/>
+                    <input style={style.done} type="submit" value="Done"/>                 
               </div>
               <div class="col">
-                    <input type="submit" value="Delete"/>
+                    <input   type="submit" value="Delete"/>
               </div>
         </div>
   </div>
             );
         }
     };
+
+    const style={
+ 
+        done:{
+            color:"blue"
+        }
+       
+
+
+
+
+        
+    };
+
+
+        
 
 
 

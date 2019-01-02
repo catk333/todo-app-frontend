@@ -5,17 +5,18 @@ class SubHeading extends React.Component{
 
     render() {
 
-        return (<h1 style={styles.header}> To Do List </h1>);
+        return (<h1 style={styleSH}> To Do List </h1>);
     }
 }
 
-const styles= {
-
-        header:{
-
-            color: "blue",
-            textDecoration:"underline"
-        }
+const styleSH= {
+    textalign:"center",
+    color: "black",
+    textshadow: "2px 6px 4px #000000",
+    fontfamily: "Arial, Helvetica,serif",
+    fontsize:"30px",
+    fontweight:"bold"
+    
 
           
     };
