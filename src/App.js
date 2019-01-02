@@ -1,28 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './Components/Header.js';
+import SubmitButton from './Components/SubmitButton.js';
+import TaskAdd from './Components/TaskAdd.js';
+import TaskTable from './Components/TaskTable.js';
+import Image from './Components/Image.js';
+import SubHeading from './Components/SubHeading.js';
+import NumberTasks from './Components/NumberTasks.js'
 
-class App extends Component {
+
+class App extends Component{
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="container">
+      
+      <Header />
+      <br/>
+      <TaskAdd />
+      <br/> 
+
+      <SubmitButton />
+       <br/>
+
+    <SubHeading/>
+       <br/>
+       <NumberTasks/>
+       <br/> 
+       <TaskTable/>
+        <br/>
+        <Image/> 
+
       </div>
     );
+
   }
 }
+
 
 export default App;
