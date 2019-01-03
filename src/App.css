@@ -1,6 +1,6 @@
 
 @media(max-width:600px){
-  body {
+  body{
       background-color:"mediumaquamarine";
   }
 }
@@ -11,6 +11,7 @@
 }
 
  @media(min-width:801px){
-    body{ background-color:"lightseagreen";
+    body{background-color:"lightseagreen";
 }
 };
+
