@@ -15,13 +15,13 @@ class SubmitButton extends React.Component{
     const styleSB={
 
 
-     color:"green",
+    color:"green",
     background:"lightseagreen",
     width: "50%",
     height: "auto",
     display: "block",
-    marginleft: "auto",
-    marginright: "auto"
+    marginLeft: "auto",
+    marginRight: "auto"
         
 
     };

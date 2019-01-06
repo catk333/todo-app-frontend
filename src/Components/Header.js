@@ -12,13 +12,13 @@ class Header extends React.Component{
 
 const styles= {
 
-        header:{
+    header:{
 
     color: "black",
-    fontfamily:"Arial Narrow",
-    fontsize:"60px",
-    fontweight:"bold",
-    textalign:"center",
+    fontFamily:"Arial Narrow",
+    fontSize:"60px",
+    fontWeight:"bold",
+    textAlign:"center",
     
         }
 

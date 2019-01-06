@@ -12,14 +12,14 @@ class NumberTasks extends React.Component{
 const styles= {
 
     tasksNumber:{
-
+    marginLeft:"auto",
+    mrginRight:"auto",
     color: "green",
-    fontfamily:"Arial Narrow",
-    fontsize:"40px",
-    fontweight:"bold",
-    textalign:"center",
+    fontFamily: "Arial, Helvetica,serif",
+    fontSize:"30px",
+    fontWeight:"bold"
     
-        }
+     }
 
           
     };

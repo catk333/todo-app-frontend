@@ -10,12 +10,11 @@ class SubHeading extends React.Component{
 }
 
 const styleSH= {
-    textalign:"center",
+    textAlign:"center",
     color: "black",
-    textshadow: "2px 6px 4px #000000",
-    fontfamily: "Arial, Helvetica,serif",
-    fontsize:"30px",
-    fontweight:"bold"
+    fontFamily: "Arial, Helvetica,serif",
+    fontSize:"30px",
+    fontWeight:"bold"
     
 
           

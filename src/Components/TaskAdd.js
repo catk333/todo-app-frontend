@@ -10,15 +10,11 @@ class TaskAdd extends React.Component{
 }
 const styleTA={
 
-border: '10px',
-border: "solid",
-boxsizing:"border-box",
-marginleft: "auto",
-marginright:"auto",
-width: "50%",
-maxwidth: "900px",
-boxsizing:"border-box",
-align:"center"
+    width: "50%",
+    height: "auto",
+    display: "block",
+    marginLeft: "auto",
+    marginRight: "auto"
 
 };
 
