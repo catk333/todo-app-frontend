@@ -12,10 +12,10 @@ class Task extends React.Component{
               {this.props.taskDescription}
               </div>
               <div className="col">
-                    <input type="submit" value="Done"/>
+                    <input style={taskButton.done} type="submit" value="Done"/>
             </div>
               <div class="col">
-                    <input type="submit" value="Delete"/>
+                    <input style={taskButton.del} type="submit" value="Delete"/>
 
               </div>
         </div>
@@ -23,6 +23,27 @@ class Task extends React.Component{
 )
 }
 };
+const taskButton = {
+
+            spacingTask:{
+                  paddingTop:"10px",
+                  paddingBottom:"10px"
+
+
+            },
+   done:{
+        backgroundColor:"green"
+   },
+
+    del:{
+        backgroundColor:"red"
+
+
+    }
+
+   }
+
+
 
 export default Task
          

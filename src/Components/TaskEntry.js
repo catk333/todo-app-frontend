@@ -50,12 +50,25 @@ class TaskEntry extends React.Component {
                     <input type="text" value={this.state.taskDescription} onChange={this.onTaskTextFieldUpdated} />
                 </div>
                 <div className="col">
-                    <input type="button" value="Save" onClick={this.onSaveClicked} />
+                    <input style={taskEntryStyle} type="button" value="Save" onClick={this.onSaveClicked} />
                 </div>
             </div>
         );
     }
 
 }
+const taskEntryStyle={
 
+        color:"green",
+        background:"lightseagreen",
+        width: "50%",
+        height: "auto",
+        display: "block",
+        marginLeft: "auto",
+        marginRight: "auto"
+            
+
+
+
+} 
 export default TaskEntry; 
