@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import Header from './Components/Header.js';
-
-import Image from './Components/Image.js';
 import SubHeading from './Components/SubHeading.js';
 import NumberTasks from './Components/NumberTasks.js';
 import './App.css'
@@ -17,6 +15,7 @@ class App extends Component {
     };
 
     this.addTask = this.addTask.bind(this);
+    this.removeTaskFromList = removeTaskFromList.bind(this);
   }
     
   addTask(task) {
@@ -24,15 +23,21 @@ class App extends Component {
 
     currentListOfTasks.push(task);
 
-    this.setState({ tasks: currentListOfTasks
-    });
+    this.setState({ tasks: currentListOfTasks});
   }
+
+  removeTaskFromList(task){
+
+    //set state of current task list
+    let currentListOfTasks = this.state.tasks;
+
+    // use filter method to remove any books that are not matching the same taskDescription, and return the array - the task entered. 
+    let newTaskList = currentListOfTasks.filter( (task.taskDescription !== taskDescription ));
+
+    //Reset state to show the new array as the list on the page. 
+    this.setState({tasks:newTaskList});
+ }
   
-
-
-
-
-
   render() {
     return (
       <div className="container">
@@ -42,9 +47,9 @@ class App extends Component {
         <br/> 
        <SubHeading/>
        <br/>
-       <NumberTasks/>
+       <NumberTasks tasks={this.state.addTaskCounter}/>
        <br/> <br/>
-      <TaskList tasks={this.state.tasks} />
+      <TaskList tasks={this.state.tasks} removeTaskHandler={this.removeTaskFromList} />
       
          </div>
     );
