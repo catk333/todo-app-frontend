@@ -2,6 +2,17 @@ import React from 'react';
 
 class Task extends React.Component{
 
+      constructor(props) {
+            super(props);
+        
+
+      this.removeTaskFromList=removeTaskFromList.bind(this);
+
+
+      removeTaskFromList(){
+
+            this.props.removeTaskHandler(this.props.tasks)
+      }
 
     render() {
 
@@ -15,7 +26,7 @@ class Task extends React.Component{
                     <input style={taskButton.done} type="submit" value="Done"/>
             </div>
               <div class="col">
-                    <input style={taskButton.del} type="submit" value="Delete"/>
+                    <input style={taskButton.del} type="submit" value="Delete" removeTaskHandler = {this.props.removeTaskHandler}/>
 
               </div>
         </div>
@@ -46,4 +57,4 @@ const taskButton = {
 
 
 export default Task
-         
+
