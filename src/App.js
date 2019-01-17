@@ -23,7 +23,7 @@ class App extends Component {
 
     currentListOfTasks.push(task);
 
-    this.setState({ tasks: currentListOfTasks});
+    this.setState({ tasks:currentListOfTasks});
   }
 
   removeTaskFromList(task){
@@ -32,7 +32,7 @@ class App extends Component {
     let currentListOfTasks = this.state.tasks;
 
     // use filter method to remove any books that are not matching the same taskDescription, and return the array - the task entered. 
-    let newTaskList = currentListOfTasks.filter( (task.taskDescription !== taskDescription ));
+    let newTaskList = currentListOfTasks.filter( (task.taskDescription !== taskDescription));
 
     //Reset state to show the new array as the list on the page. 
     this.setState({tasks:newTaskList});
