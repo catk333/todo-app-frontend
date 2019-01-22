@@ -4,14 +4,27 @@ class Task extends React.Component{
 
       constructor(props) {
             super(props);
-        
-
-      this.removeTaskFromList=removeTaskFromList.bind(this);
-
+            
+            
+      this.removeTaskFromList=this.removeTaskFromList.bind(this);
+      this.taskCompleted=this.taskCompleted.bind(this);
+    
+      
+      
+            this.state={
+                  tasks:[]
+            };
+      }
 
       removeTaskFromList(){
 
-            this.props.removeTaskHandler(this.props.tasks)
+            this.props.onRemoveTaskHandler();
+
+      }
+      taskCompleted(){
+            alert( 'Well done, one down!');
+
+
       }
 
     render() {
@@ -23,10 +36,10 @@ class Task extends React.Component{
               {this.props.taskDescription}
               </div>
               <div className="col">
-                    <input style={taskButton.done} type="submit" value="Done"/>
+                    <input style={taskButton.done} type="submit" value="Done" onDoneClick={this.taskCompleted}/>
             </div>
               <div class="col">
-                    <input style={taskButton.del} type="submit" value="Delete" removeTaskHandler = {this.props.removeTaskHandler}/>
+                    <input style={taskButton.del} type="submit" OnRemoveClick={this.removeTaskFromList} value="Remove" />
 
               </div>
         </div>
