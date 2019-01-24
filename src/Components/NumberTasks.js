@@ -20,7 +20,7 @@ class NumberTasks extends React.Component {
     render() {
       // tasks remaining should be the length of the array/number in the list. 
 
-        return (<p1 style={styles.tasksNumber}> Tasks remaining:{this.props.tasks} </p1>);
+        return (<p1 style={styles.tasksNumber}> Tasks remaining:{this.props.tasks.length} </p1>);
     }
 };
 

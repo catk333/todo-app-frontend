@@ -3,29 +3,20 @@ import Task from './Task.js'
 
 class TaskList extends React.Component {
 
-
-
-
-   
-    render() {
+       
+render() {
 
         return (
-
-           <div>         
-            {        this.props.tasks.map((task, i) => 
-                        <Task taskDescription={task.description} key={i} />
+            <div>         
+            {
+                this.props.tasks.map((task, i) => 
+                        <Task taskDescription={task.description} key={i} onTaskCompletedHandler={this.props.taskCompleted} onRemoveTaskHandler={this.props.removeTaskFromList}/>
                     )
             }
-                </div>
-
-                    );
-
-
-
-
-
-
+         </div>
+        );
         }
+
     }
 
         export default TaskList; 

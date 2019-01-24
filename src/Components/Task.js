@@ -5,24 +5,18 @@ class Task extends React.Component{
       constructor(props) {
             super(props);
             
-            
-      this.removeTaskFromList=this.removeTaskFromList.bind(this);
-      this.taskCompleted=this.taskCompleted.bind(this);
-    
+            this.taskCompleted=this.taskCompleted.bind(this);
+            this.removeTaskFromList=this.removeTaskFromList.bind(this);
       
-      
-            this.state={
-                  tasks:[]
-            };
       }
 
       removeTaskFromList(){
 
-            this.props.onRemoveTaskHandler();
-
-      }
+            this.props.onRemoveTaskHandler(this.props.taskDescription)
+    }
       taskCompleted(){
-            alert( 'Well done, one down!');
+
+           this.props.onTaskCompletedHandler(this.props.tasks)
 
 
       }
@@ -36,10 +30,10 @@ class Task extends React.Component{
               {this.props.taskDescription}
               </div>
               <div className="col">
-                    <input style={taskButton.done} type="submit" value="Done" onDoneClick={this.taskCompleted}/>
+                    <input style={taskButton.done} type="submit" value="Done" onClick={this.taskCompleted}/>
             </div>
               <div class="col">
-                    <input style={taskButton.del} type="submit" OnRemoveClick={this.removeTaskFromList} value="Remove" />
+                    <input style={taskButton.del} type="submit" onClick={this.removeTaskFromList} value="Remove" />
 
               </div>
         </div>
