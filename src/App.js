@@ -13,9 +13,8 @@ class App extends Component {
 
 
     this.addTask = this.addTask.bind(this);
-    this.removeTaskFromList=this.removeTaskFromList.bind(this);
+   
     this.addTaskCounter=this.addTaskCounter.bind(this);
-    this.taskCompleted=this.taskCompleted.bind(this);
 
     this.state = {
       tasks:[]
@@ -23,7 +22,8 @@ class App extends Component {
   };
 }
     
-  addTask(task) {
+  addTask(task)
+   {
     let currentListOfTasks = this.state.tasks;
 
     currentListOfTasks.push(task);
@@ -31,40 +31,19 @@ class App extends Component {
     this.setState({tasks:currentListOfTasks});
   }
   
-  
-  removeTaskFromList(taskDescription){
-
  
-    let currentListOfTasks = this.state.tasks;
+ 
+  addTaskCounter(){
 
-    // use filter method to remove any books that are not matching the same taskDescription, and return the array - the task entered. 
-    let newTaskList = currentListOfTasks.filter((task)=> task.description== taskDescription);
-
-
-
-
-
-    this.setState({tasks:newTaskList});
- };
   
- addTaskCounter(){
-
-  //need to set the state of the tasks left to tasks in list
   let tasksLeft = this.state.tasks;
   
-  // need to get the length of the tasks array (.length)
   let tasksRemaining = tasksLeft.length; 
    
-  
-  // Set state of the tasks remaining into tasks?
   this.setState({tasks:tasksRemaining})
   };
 
   
-  //taskdone ( needs function writing)
-  taskCompleted(){
-    alert( 'Well done, one down!');
-  }
 
 
 
@@ -79,7 +58,8 @@ class App extends Component {
        <br/>
        <NumberTasks tasks={this.state.tasks} taskCounterHandler={this.addTaskCounter}/>
        <br/> <br/>
-      <TaskList tasks={this.state.tasks} onTaskCompletedHandler={this.taskCompleted} onRemoveTaskHandler={this.removeTaskFromList}/>
+      <TaskList tasks={this.state.tasks}/>
+      
       
          </div>
     );

@@ -11,15 +11,16 @@ class Task extends React.Component{
       }
 
       removeTaskFromList(){
-
-            this.props.onRemoveTaskHandler(this.props.taskDescription)
+           
+            this.props.onRemoveTaskHandler();
     }
-      taskCompleted(){
+      
+    taskCompleted(){
+                 
+           this.props.onTaskCompletedHandler();
+       }
 
-           this.props.onTaskCompletedHandler(this.props.tasks)
 
-
-      }
 
     render() {
 
@@ -30,7 +31,8 @@ class Task extends React.Component{
               {this.props.taskDescription}
               </div>
               <div className="col">
-                    <input style={taskButton.done} type="submit" value="Done" onClick={this.taskCompleted}/>
+                    <input style={taskButton.done} type="submit" value="Done" onClick={this.taskCompleted} />
+      
             </div>
               <div class="col">
                     <input style={taskButton.del} type="submit" onClick={this.removeTaskFromList} value="Remove" />
@@ -41,6 +43,7 @@ class Task extends React.Component{
 )
 }
 };
+
 const taskButton = {
 
             spacingTask:{
@@ -56,10 +59,11 @@ const taskButton = {
     del:{
         backgroundColor:"red"
 
+}
 
-    }
+}
 
-   }
+    
 
 
 
