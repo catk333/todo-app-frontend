@@ -1,69 +1,75 @@
 import React from 'react';
 
-class Task extends React.Component{
+class Task extends React.Component {
 
       constructor(props) {
             super(props);
-            
-            this.taskCompleted=this.taskCompleted.bind(this);
-            this.removeTaskFromList=this.removeTaskFromList.bind(this);
-      
+
+            this.taskCompleted = this.taskCompleted.bind(this);
+            this.removeTaskFromList = this.removeTaskFromList.bind(this);
+
       }
 
-      removeTaskFromList(){
-           
-            this.props.onRemoveTaskHandler();
-    }
-      
-    taskCompleted(){
-                 
-           this.props.onTaskCompletedHandler();
-       }
+      removeTaskFromList() {
+
+            this.props.onRemoveTaskHandler(this.props.taskId);
+      }
+
+      taskCompleted() {
+
+            this.props.onTaskCompletedHandler(this.props.taskId);
+      }
 
 
 
-    render() {
+      render() {
 
-        return (
-        <div>
-            <div className="row" >
-              <div className="col">
-              {this.props.taskDescription}
-              </div>
-              <div className="col">
-                    <input style={taskButton.done} type="submit" value="Done" onClick={this.taskCompleted} />
-      
-            </div>
-              <div class="col">
-                    <input style={taskButton.del} type="submit" onClick={this.removeTaskFromList} value="Remove" />
+            let taskStyle = {};
 
-              </div>
-        </div>
-     </div>
-)
-}
+            if(this.props.taskCompleted) {
+                  taskStyle = taskButton.done;
+            }
+
+            return (
+                  <div>
+                        <div className="row" >
+                              <div className="col" style={taskStyle}>
+                                    {this.props.taskDescription}
+                              </div>
+                              <div className="col">
+                                    <input style={taskButton.done} type="submit" onClick={this.taskCompleted} value="Done"/>
+
+                              </div>
+                              <div class="col">
+                                    <input style={taskButton.del} type="submit" onClick={this.removeTaskFromList} value="Remove" />
+
+                              </div>
+                        </div>
+                  </div>
+            )
+      }
 };
 
 const taskButton = {
 
-            spacingTask:{
-                  paddingTop:"10px",
-                  paddingBottom:"10px"
+      spacingTask: {
+            paddingTop: "10px",
+            paddingBottom: "10px"
 
 
-            },
-   done:{
-        backgroundColor:"green"
-   },
+      },
+      done: {
+            backgroundColor: "green"
+      },
 
-    del:{
-        backgroundColor:"red"
+      del: {
+            backgroundColor: "red"
+
+      }
 
 }
 
-}
 
-    
 
 
 

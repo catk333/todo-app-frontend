@@ -13,13 +13,14 @@ class App extends Component {
 
 
     this.addTask = this.addTask.bind(this);
-   
     this.addTaskCounter=this.addTaskCounter.bind(this);
+    this.removeTask = this.removeTask.bind(this);
+    this.taskCompleted=this.taskCompleted.bind(this);
 
+    
     this.state = {
       tasks:[]
-      
-  };
+    };
 }
     
   addTask(task)
@@ -30,6 +31,34 @@ class App extends Component {
 
     this.setState({tasks:currentListOfTasks});
   }
+
+  removeTask(taskId) {
+    
+
+      let currentListOfTasks = this.state.tasks;
+
+    
+    
+    let filteredTaskList = currentListOfTasks.filter((task)=> taskId !== task.id);
+
+   this.setState({tasks:filteredTaskList});
+ 
+    }
+
+  taskCompleted(taskId){
+    let currentListOfTasks = this.state.tasks;
+
+
+    let filteredTaskList = currentListOfTasks.filter((task)=> taskId === task.id);
+
+    let task= filteredTaskList [0];
+
+    task.completed = true;
+
+    this.setState({tasks:filteredTaskList});
+
+    
+    }
   
  
  
@@ -58,7 +87,7 @@ class App extends Component {
        <br/>
        <NumberTasks tasks={this.state.tasks} taskCounterHandler={this.addTaskCounter}/>
        <br/> <br/>
-      <TaskList tasks={this.state.tasks}/>
+      <TaskList tasks={this.state.tasks} removeTaskHandler={this.removeTask} taskCompletedHandler ={this.taskCompleted}  />
       
       
          </div>
