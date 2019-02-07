@@ -27,8 +27,9 @@ class Task extends React.Component {
             let taskStyle = {};
 
             if(this.props.taskCompleted) {
-                  taskStyle = taskButton.done;
+                  taskStyle = taskButton.completedTask;
             }
+            
 
             return (
                   <div>
@@ -65,8 +66,12 @@ const taskButton = {
       del: {
             backgroundColor: "red"
 
-      }
+      },
+      completedTask:{
+                  color: "green"
 
+
+      }
 }
 
 

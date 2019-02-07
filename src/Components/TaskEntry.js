@@ -10,7 +10,7 @@ class TaskEntry extends React.Component {
         };
 
         //Binding
-    
+
         this.onSaveClicked = this.onSaveClicked.bind(this);
         this.onTaskTextFieldUpdated = this.onTaskTextFieldUpdated.bind(this);
     }
@@ -25,14 +25,14 @@ class TaskEntry extends React.Component {
     };
 
         this.props.onSaveTaskHandler(taskToBeAdded);
-    
+
 
       //Clear 
         this.setState({
             taskDescription: ""
         });
     }
-    
+
 
     //Function- text updated
     onTaskTextFieldUpdated(event) {
@@ -50,25 +50,19 @@ class TaskEntry extends React.Component {
                     <input type="text" value={this.state.taskDescription} onChange={this.onTaskTextFieldUpdated} />
                 </div>
                 <div className="col">
-                    <input style={taskEntryStyle} type="button" value="Save" onClick={this.onSaveClicked} />
+                    <input  style={saveButton} type="button" value="Save" onClick={this.onSaveClicked} />
                 </div>
             </div>
         );
     }
 
 }
-const taskEntryStyle={
 
-        color:"green",
-        background:"lightseagreen",
-        width: "50%",
-        height: "auto",
-        display: "block",
-        marginLeft: "auto",
-        marginRight: "auto"
-            
+const saveButton = {
 
+    backgroundColor: "darkCyan",
 
+};
 
-} 
-export default TaskEntry; 
+export default TaskEntry;
+
