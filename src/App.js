@@ -40,7 +40,7 @@ class App extends Component {
     
     
     let filteredTaskList = currentListOfTasks.filter((task)=> taskId !== task.id);
-
+    
    this.setState({tasks:filteredTaskList});
  
     }
@@ -48,14 +48,13 @@ class App extends Component {
   taskCompleted(taskId){
     let currentListOfTasks = this.state.tasks;
 
-
     let filteredTaskList = currentListOfTasks.filter((task)=> taskId === task.id);
 
-    let task= filteredTaskList [0];
+    let task= filteredTaskList[0];
 
     task.completed = true;
 
-    this.setState({tasks:filteredTaskList});
+    this.setState({tasks:currentListOfTasks});
 
     
     }
