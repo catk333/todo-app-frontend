@@ -19,7 +19,7 @@ render() {
                 this.props.tasks.map((task, i) => 
                         <Task 
                             taskId={task.id}
-                            taskDescription={task.description} 
+                            taskDescription={task.Description} 
                             taskCompleted={task.completed}
                             key={i} 
                             onTaskCompletedHandler={this.props.taskCompletedHandler} 

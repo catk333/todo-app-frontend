@@ -19,8 +19,7 @@ class TaskEntry extends React.Component {
     onSaveClicked() {
 
         const taskToBeAdded = {
-            id: (Math.random() * 100),
-            description: this.state.taskDescription,
+            taskDescription: this.state.taskDescription,
             completed: false
     };
 

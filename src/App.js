@@ -5,6 +5,8 @@ import NumberTasks from './Components/NumberTasks.js';
 import './App.css'
 import TaskList from './Components/TaskList.js';
 import TaskEntry from './Components/TaskEntry.js';
+import TasksService from './service/tasks';
+
 
 class App extends Component {
 
@@ -22,9 +24,21 @@ class App extends Component {
       tasks:[]
     };
 }
+
+
+//this function needs to be after the constructer- order matters!
+
+async componentDidMount() {
+  const tasks = await TasksService.getTasks();
+  console.log('tasks');
+  this.setState({tasks:tasks});
+}
+
+async addTask(task){
+    const response = await TasksService.saveTask(task);
+
+    task.taskId = response.insertId;
     
-  addTask(task)
-   {
     let currentListOfTasks = this.state.tasks;
 
     currentListOfTasks.push(task);
