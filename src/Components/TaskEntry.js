@@ -64,4 +64,3 @@ const saveButton = {
 };
 
 export default TaskEntry;
-

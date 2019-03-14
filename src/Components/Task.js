@@ -79,4 +79,3 @@ const taskButton = {
 
 
 export default Task
-
