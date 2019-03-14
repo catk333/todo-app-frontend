@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import Header from './Components/Header.js';
 import SubHeading from './Components/SubHeading.js';
@@ -29,10 +30,11 @@ class App extends Component {
 //this function needs to be after the constructer- order matters!
 
 async componentDidMount() {
-  const tasks = await TasksService.getTasks();
+  const tasks = await TasksService.gettasks();
   console.log('tasks');
   this.setState({tasks:tasks});
 }
+
 
 async addTask(task){
     const response = await TasksService.saveTask(task);
@@ -46,18 +48,21 @@ async addTask(task){
     this.setState({tasks:currentListOfTasks});
   }
 
-  removeTask(taskId) {
-    
 
-      let currentListOfTasks = this.state.tasks;
+// Doesn't work now at all! 
+//Delete working in Postman. 
+// Think the issue is still with this code? The function itself isnt working now.  
+  async removeTask(taskId){
 
-    
-    
+    const response = await TasksService.deleteTask(taskId)
+
+    let currentListOfTasks = this.state.tasks;
+
     let filteredTaskList = currentListOfTasks.filter((task)=> taskId !== task.id);
     
-   this.setState({tasks:filteredTaskList});
+    this.setState({tasks:filteredTaskList});
  
-    }
+  }
 
   taskCompleted(taskId){
     let currentListOfTasks = this.state.tasks;
