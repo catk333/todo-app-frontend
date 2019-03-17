@@ -51,10 +51,13 @@ async addTask(task){
 
 // Doesn't work now at all! 
 //Delete working in Postman. 
-// Think the issue is still with this code? The function itself isnt working now.  
+ 
   async deleteTask(taskId){
 
     const response = await TasksService.deleteTask(taskId)
+   
+     //response part not 'active' - I need to assign it something here but 
+     //not sure what as already has an id, doesn't need to be given one. 
     
     let currentListOfTasks = this.state.tasks;
 
@@ -66,6 +69,8 @@ async addTask(task){
 
   
   async taskCompleted(taskId){
+
+    const response = await TasksService.updateTask(taskId)
 
     let currentListOfTasks = this.state.tasks;
 
