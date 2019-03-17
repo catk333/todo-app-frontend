@@ -6,11 +6,11 @@ class Task extends React.Component {
             super(props);
 
             this.taskCompleted = this.taskCompleted.bind(this);
-            this.removeTaskFromList = this.removeTaskFromList.bind(this);
+            this.deleteTask = this.deleteTask.bind(this);
 
       }
 
-      removeTaskFromList() {
+      deleteTask() {
 
             this.props.onRemoveTaskHandler(this.props.taskId);
       }
@@ -35,14 +35,14 @@ class Task extends React.Component {
                   <div>
                         <div className="row" >
                               <div className="col" style={taskStyle}>
-                                    {this.props.taskId} - {this.props.taskDescription}
+                                     {this.props.taskId} - {this.props.taskDescription}
                               </div>
                               <div className="col">
                                     <input style={taskButton.done} type="submit" onClick={this.taskCompleted} value="Done"/>
 
                               </div>
                               <div class="col">
-                                    <input style={taskButton.del} type="submit" onClick={this.removeTaskFromList} value="Remove" />
+                                    <input style={taskButton.del} type="submit" onClick={this.deleteTask} value="Remove" />
 
                               </div>
                         </div>
@@ -70,9 +70,9 @@ const taskButton = {
       completedTask:{
                   color: "green"
 
+            }
 
       }
-}
 
 
 

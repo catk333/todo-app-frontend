@@ -17,7 +17,7 @@ class App extends Component {
 
     this.addTask = this.addTask.bind(this);
     this.addTaskCounter=this.addTaskCounter.bind(this);
-    this.removeTask = this.removeTask.bind(this);
+    this.deleteTask = this.deleteTask.bind(this);
     this.taskCompleted=this.taskCompleted.bind(this);
 
     
@@ -52,10 +52,10 @@ async addTask(task){
 // Doesn't work now at all! 
 //Delete working in Postman. 
 // Think the issue is still with this code? The function itself isnt working now.  
-  async removeTask(taskId){
+  async deleteTask(taskId){
 
     const response = await TasksService.deleteTask(taskId)
-
+    
     let currentListOfTasks = this.state.tasks;
 
     let filteredTaskList = currentListOfTasks.filter((task)=> taskId !== task.id);
@@ -64,7 +64,9 @@ async addTask(task){
  
   }
 
-  taskCompleted(taskId){
+  
+  async taskCompleted(taskId){
+
     let currentListOfTasks = this.state.tasks;
 
     let filteredTaskList = currentListOfTasks.filter((task)=> taskId === task.id);
@@ -75,7 +77,6 @@ async addTask(task){
 
     this.setState({tasks:currentListOfTasks});
 
-    
     }
   
  
@@ -105,7 +106,7 @@ async addTask(task){
        <br/>
        <NumberTasks tasks={this.state.tasks} taskCounterHandler={this.addTaskCounter}/>
        <br/> <br/>
-      <TaskList tasks={this.state.tasks} removeTaskHandler={this.removeTask} taskCompletedHandler ={this.taskCompleted}  />
+      <TaskList tasks={this.state.tasks} removeTaskHandler={this.deleteTask} taskCompletedHandler ={this.taskCompleted}  />
       
       
          </div>
